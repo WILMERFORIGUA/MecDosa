@@ -1,0 +1,242 @@
+/*CSS para SERVICIOS */
+header {
+    background-color: #BBBBBB;
+}
+
+.encabezado{
+    width: auto;
+    position: relative;
+    margin: 0 auto;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav{
+    position: static;
+    top: 40px;
+    right: 0;
+}
+
+nav li{
+    display: inline;
+    margin:0 0 0 18px;
+}
+
+nav a{
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: #c78c19;
+    text-decoration: underline;
+}
+
+nav a:active{
+    color: #088c19;
+}
+
+.servicios {
+    width: auto;
+    margin: 0 auto;
+    padding: 50px;
+}
+.servicios li{
+    display: inline-block;
+    text-align:center;
+    width:auto;
+    margin: 0 1.5%;
+    padding: 20px 4px;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.servicios li:hover{
+    color:#0000FF
+}
+
+.servicios h2{
+    font-size: 20px;
+    font-weight:bold;
+    margin-bottom: 5px;
+}
+.servicios li:hover h2{
+    font-size: 28px;
+} 
+
+
+.producto-descripcion{
+    font-size: 18px;
+}
+
+.producto-promo{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer{
+    text-align: center;
+    background: url(banner/bg.jpg);
+    padding: 20px;
+}
+
+.copyright{
+    color : #FFFFFF;
+    font-size: 12px;
+}
+
+/*CSS para CONTACTO */
+form{
+    margin: 25px 0;
+}
+
+form label,form legend{
+    display:block;
+    font-size: 20px;
+    margin: 20px 0 10px;
+}
+
+.input-padre{
+    display: block;
+    font-size: 20px;
+    margin: 0 0 18px;
+    padding: 5px  20px;
+    width: 50%;
+}
+
+p{
+    color:#0000FF;
+}
+
+.checkbox{
+    margin: 30px 0;
+}
+
+.enviar{
+    width: 30%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #c78c19;
+    border-radius: 10px;
+    transition: 1s all;
+}
+
+.enviar:hover {
+    background: darkorange;
+    cursor: pointer;
+    transform: scale(1.2) rotate(02deg);
+}
+
+.enviar:active{
+    color:#088c19;
+}
+
+table{
+    margin:30px 30px;
+}
+
+thead{
+    background: #BBBBBB;
+    color: black;
+    font-weight: bold;
+}
+
+td,th{
+    border: 1px solid #000000;
+    padding: 10px 15px;
+}
+
+
+/*CSS para HOME */
+.titulo-principal{
+    text-align: center;
+    font-size: 2em;
+    margin: 1em 1em 1em 1em;
+}
+
+.principal p{
+    margin: 0  0 1em  1em;
+    font-size: 21px;
+}
+
+.principal strong{
+    font-weight: bold;
+    color:red;
+}
+
+.principal em{
+    font-style: italic;
+}
+
+.diferenciales{
+    background: linear-gradient(3deg, gold 10%, red, black);
+    margin: 2em auto;
+}
+.lista-virtudes{
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    margin-right: 4%;
+}
+.imagenDiferenciales:hover{
+    opacity: 0.3;
+    transition: 400ms;
+    box-shadow: 10px 10px 30px 15px gold, inset -10px -10px 30px 15px gold;
+}
+.items{
+    line-height: 3;
+    font-weight: 700;
+}
+.items.items:nth-child(3){
+    font-weight: bold;
+    color:darkgreen;
+}
+.items:before{
+    content:"✭"
+}
+h3{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 10px 5px 20px;
+}
+
+.mapa{
+    background: linear-gradient(white, #888888);
+    padding: 1em 0;
+    margin: 0 auto;
+}
+
+.mapa p{
+    margin: 1em auto;
+    text-align: center;
+    font-weight: bold;
+}
+.mapa-contenido{
+    width: 50%;
+    margin: 2em auto;
+}
+.video{
+    margin: 1em auto;
+}
+
+@media screen and (max-width: 480px){
+    h1{text-align: center}
+    nav{position: static;}
+    .caja, .principal, .mapa-contenido, .contenidoDiferenciales, .video
+    width:100%;
+}
+.lista-virtudes, ".imagenDiderenciales"{
+    width:100%;
+}
+
+
+
