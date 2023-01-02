@@ -9,19 +9,19 @@ header {
     margin: 0 auto;
 }
 
-body{
+/*body{
     font-family: 'Montserrat', sans-serif;
-}
+}*/
 
 nav{
-    position: static;
+    position:absolute;
     top: 40px;
     right: 0;
 }
 
 nav li{
-    display: inline;
-    margin:0 0 0 18px;
+    display:inline;
+    margin:0 50px 0 0;
 }
 
 nav a{
@@ -83,7 +83,7 @@ nav a:active{
 
 footer{
     text-align: center;
-    background: url(banner/bg.jpg);
+    background: url(imagenes/bg.jpg);
     padding: 20px;
 }
 
@@ -234,9 +234,7 @@ h3{
     .caja, .principal, .mapa-contenido, .contenidoDiferenciales, .video
     width:100%;
 }
-.lista-virtudes, ".imagenDiderenciales"{
-    width:100%;
-}
+
 
 
 
