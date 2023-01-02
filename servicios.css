@@ -190,7 +190,7 @@ td,th{
 .imagenDiferenciales:hover{
     opacity: 0.3;
     transition: 400ms;
-    box-shadow: 10px 10px 30px 15px gold, inset -10px -10px 30px 15px gold;
+    box-shadow: 10px 10px 30px 15px gold, inset -5px -5px 20px 19px gold;
 }
 .items{
     line-height: 3;
