@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-        <title>aboutUsDosa</title>
+        <title>HomeDosa</title>
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="servicios.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
@@ -24,19 +24,25 @@
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </nav>
+
                 </h1>
             </div>
         </header>
 
         <main>
             <div class="container-boton">
-                <a href="https://wa.me/573144241258?text=Somos%20Mecánica%20Rápida%20Dosa.%20En%20que%20te%20podemos%20ayudar!!!"
+                <a href="https://wa.me/573144241258?text=Buen%20día%20Mecánica%20Rápida%20Dosa.%20Gracias%20por%20atender!!!"
                     target="_blank">
                     <img class="boton" src="imagenes/whatsapp-icon.png" alt="logo de whatsapp">
                 </a>
             </div>
 
             <section class="principal">
+                <h>
+                    <div class="container-clock"> </div>
+                    <ul id="time">00:00:00</ul>
+                    <ul id="date">date</ul>
+               </h>
                 <h2 class="titulo-principal"> Acerca de Mecánica Rápida Dosa</h2>
                   <p>Ubicada en sur de la ciudad de Tunja, <strong>El taller Mecánica rápida Dosa</strong> trae lo mejor para su vehiculo . Fundada en 2020, Mecanica Rápida Dosa ya se destaca en la ciudad y conquista nuevos clientes diariamente. </p>
     
@@ -65,15 +71,218 @@
                 <p>Nuestro establecimiento está ubicado (en la dirección Cra 13 N.3-52 sur) a 200m de la plaza de mercado del Sur; al frente de fertilizantes y fertilizantes SAS. (Tunja-Boyacá-Colombia)</p>
                 <div class="mapa-contenido">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1404.091846231592!2d-73.37242533251872!3d5.511752783780713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a7f1da47d00b5%3A0x539506468bc64fab!2sFertilizantes%20y%20Fertilizantes%20S.A.S!5e0!3m2!1ses!2sco!4v1672109255111!5m2!1ses!2sco" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    
-                </div class="video">
-                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/7mVjO3eYU5w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
-                </div>
                 
             </section>
            
         </main>
 
+        <script>
+            //  reloj.   
+            const time = document.getElementById('time');
+            const date = document.getElementById('date');
+            
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            
+            const interval = setInterval(() => {
+            
+                const local = new Date();
+                
+                let day = local.getDate(),
+                    month = local.getMonth(),
+                    year = local.getFullYear();
+            
+                time.innerHTML = local.toLocaleTimeString();
+                date.innerHTML = `${day} ${monthNames[month]} ${year}`;
+            
+            }, 1000);
+               
+                function showTime(){
+                    myDate = new Date();
+                    hours = myDate.getHours();
+                    minutes = myDate.getMinutes();
+                    seconds = myDate.getSeconds();
+                    if (hours < 10) hours = 0 + hours;
+                    if (minutes < 10) minutes = "0" + minutes;
+                    if (seconds < 10) seconds = "0" + seconds;
+                    $("#HoraActual").text(hours+ ":" +minutes+ ":" +seconds);
+                    setTimeout("showTime()", 1000);
+            }
+        </script>
+
+            
+            <!-- --  ANIMATION AND GAME  USING CANVAS AND JS .  /*  ANIMACONES Y JUEGO */-- -->
+            <div class="game">
+                <p>JUEGA TIRO AL BLANCO Y DESESTRESATE!</P>
+                <canvas width="400" height="400"> </canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");        
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,400,200); 
+
+    // dibujando circulos con cada click
+    function dibujarCirculo(evento){
+        var a = evento.pageX - pantalla.offsetLeft;
+        var b = evento.pageY - pantalla.offsetTop;    
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(a,b,5,0,2*3.14);
+        pincel.fill();
+        console.log(a + "," + b);        
+    }
+    pantalla.onclick = dibujarCirculo;
+
+    function disenharCircunferencia(a,b,r){
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(a,b,r,0,2*Math.PI);
+        pincel.fill();
+    }    
+    // GENERAR MOVIMIENTO , limpiando la huella de cada circulo
+    function limpiarPantalla(){
+        pincel.clearRect(0,20,400,10);
+    }
+
+    var x = 0;
+    var sentido = 1;
+
+    // GENERAR MOVIMIENTO. sentido ++    y retornando el circulo en los bordes
+    function actualizarPantalla(){
+
+        limpiarPantalla();
+        if(x > 400){
+            sentido = -1;
+        }else if(x < 0){
+            sentido = 1;
+        }
+        disenharCircunferencia(x,20,10);
+        x = x + sentido;
+    }
+    setInterval(actualizarPantalla,50);   //  50  milisegundos 
+
+// GRAFICO   DOSA
+
+    //fondo
+    pincel.fillStyle = 'aqua';
+    pincel.fillRect(70, 40, 260 ,100);
+    //line 1
+    pincel.fillStyle = 'black';
+    pincel.fillRect(90, 60, 10, 50);
+    pincel.fillRect(150,60, 40, 10);
+    pincel.fillRect(210, 60, 40, 10);
+    pincel.fillRect(270,60, 40, 10);
+     //line 2
+     pincel.fillStyle = 'black';
+    pincel.fillRect(150,70, 10, 30);
+    pincel.fillRect(180,70, 10, 30);
+    pincel.fillRect(210, 70, 10, 10);
+    pincel.fillRect(270,70, 10, 40);
+    pincel.fillRect(300,70, 10, 40);
+      //line 3
+    pincel.fillStyle = 'black';
+    pincel.fillRect(180,80, 10, 10);
+    pincel.fillRect(210, 80, 40, 10);
+    pincel.fillRect(270, 80, 40, 10);
+       //line 4
+    pincel.fillStyle = 'black';
+    pincel.fillRect(180, 90, 10, 10);
+    pincel.fillRect(240, 90, 10, 10);
+
+    // line 5
+    pincel.fillStyle = 'black';
+    pincel.fillRect(150,100, 40, 10);
+    pincel.fillRect(210, 100, 40, 10);
+    pincel.fillRect(270, 100, 10, 10);
+    pincel.fillRect(300, 100, 10, 10);
+
+    // diagonales   D
+    pincel.fillStyle='black';
+    pincel.beginPath();
+    pincel.moveTo(102, 60);
+    pincel.lineTo(135, 85);
+    pincel.lineTo(102, 110);
+    pincel.fill();
+
+    pincel.fillStyle='aqua';
+    pincel.beginPath();
+    pincel.moveTo(100, 70);
+    pincel.lineTo(120, 85);
+    pincel.lineTo(100, 100);
+    pincel.fill();
+
+
+    //  JUEGO  TIRO AL BLANCO
+    var screen = document.querySelector("canvas");
+    var pinc = screen.getContext("2d");        
+    pinc.fillStyle = "aqua";
+    pinc.fillRect(0,201,400,400); 
+
+
+	var xAleatorio;
+	var yAleatorio;
+
+	function disenarBlanco(x,y,radio, color){
+        if (y>200){
+            pinc.fillStyle = color;
+		    pinc.beginPath();
+		    pinc.arc(x,y,radio,0,2*Math.PI);
+		    pinc.fill();
+        }
+       
+	}	
+
+	function cleanPantalla(){
+		pinc.clearRect(0,251,400,350);
+	}
+
+	var x = 0;
+    var radio=10;
+
+	function disenharObjetivo(x,y){
+
+		disenarBlanco(x,y,radio+20,"aqua");
+		disenarBlanco(x,y,radio+10,"white");
+		disenarBlanco(x,y,radio,"blue");
+	}
+
+	
+	function sortearPosicion(maximo){
+		return Math.floor(Math.random()*maximo);
+	}
+
+
+	function updatePantalla(){
+
+		cleanPantalla();
+		xAleatorio = sortearPosicion(400);
+		yAleatorio = sortearPosicion(400);
+		disenharObjetivo(xAleatorio,yAleatorio);
+		x++;
+	}
+	
+	setInterval(updatePantalla,2000);
+
+	function disparar(event){
+
+		var x = event.pageX - screen.offsetLeft;
+		var y = event.pageY - screen.offsetTop;
+
+		if ((x < xAleatorio + radio) && 
+			(x > xAleatorio - radio) &&
+			(y < yAleatorio + radio) &&
+			(y > yAleatorio - radio) ) {
+			alert("Acertaste con MecanicaDosa =) ");
+		}
+	}
+
+	screen.onclick = disparar;
+            </script> 
+
+
+            
         <footer>
             <img src="imagenes/logo.png" alt="Logo de Mecánica Rápida Dosa">
             <p class="copyright">&copy  Copyright Mecánica Rápida Dosa</p>
